@@ -63,7 +63,7 @@ Use the `::searchStations($query, $pageOffset, $pageLimit)` method to search sta
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
-| $query | string | | Word(s) to be matched against station titles. |
+| $query | string | | Word(s) to be matched against station names. |
 | $pageOffset | int | 0 | From which page to start. |
 | $pageLimit | int | 1 | How many pages to read. |
 
@@ -91,9 +91,9 @@ $genres = $internetRadio->getGenres();
 <br><br>
 
 ## Notes
-As of the moment of this writing, internet-radio.com does not provide an API, the information this library provides is scraped from their official page and this library may stop working in the day they decide to update the website.
+As of the moment of this writing internet-radio.com does not provide an API, the information provided by this library is being scraped from the official website and this library may stop working in the day they decide to update their page.
 
-
+<br><br>
 
 ## License
 
