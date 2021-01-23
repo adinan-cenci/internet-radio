@@ -1,5 +1,5 @@
 # Internet Radio
-A library to retrieve radio stations from the internet-radio.com catalog.
+An unofficial library to retrieve radio stations from the internet-radio.com catalog.
 
 <br><br>
 
