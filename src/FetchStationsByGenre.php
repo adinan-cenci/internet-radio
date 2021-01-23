@@ -50,6 +50,7 @@ class FetchStationsByGenre extends Fetch
         $secondTd     = $tds->item(1); // player
         $thirdTd      = $tds->item(2); // description
         $fourthTd     = $tds->item(3);
+        $id           = '';
         $name         = '';
         $description  = '';
         $playlist     = '';
@@ -71,6 +72,10 @@ class FetchStationsByGenre extends Fetch
             $name = $header->firstChild instanceof \DOMElement ? 
                 $header->firstChild->nodeValue : 
                 $header->nodeValue;
+
+            $id = $header->firstChild instanceof \DOMElement ? 
+                trim(str_replace('/station/', '', (string) $header->firstChild->getAttribute('href') ), '/') : 
+                '';
         }
 
         //-PLAYING--------
@@ -117,6 +122,7 @@ class FetchStationsByGenre extends Fetch
         //---------
 
         $station = array(
+            'id'                => $id, 
             'name'              => $name, 
             'description'       => $description, 
             'homepage'          => $homepage, 

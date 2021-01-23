@@ -24,6 +24,7 @@ It will return an array as such:
 ```
 [
     {
+    	"id": "idobihowl", 
         "name": "idobi Howl", 
         "description": "metal, hardcore", 
         "homepage": "http://idobiradio.com/", 
@@ -33,6 +34,7 @@ It will return an array as such:
         "bitRate": "128"
     }, 
     {
+    	"id": "knac.com", 
         "name": "KNAC.COM", 
         "description": "metal", 
         "homepage": "http://www.knac.com", 
@@ -42,6 +44,7 @@ It will return an array as such:
         "bitRate": "128"
     }, 
     {
+    	"id": "metalexpressradio", 
         "name": "Metal Express Radio", 
         "description": "heavy metal", 
         "homepage": "http://www.metalexpressradio.com", 
