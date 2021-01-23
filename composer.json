@@ -1,0 +1,34 @@
+{
+    "name": "adinan-cenci/internet-radio",
+    "description": "A library to fetch internet-radio.com radio stations.", 
+    "type": "library", 
+    "keywords": ["radio", "music"], 
+    "license": "MIT",
+    "version": "0.1.0", 
+    "authors": [
+        {
+            "name": "Adinan Cenci",
+            "email": "adinancenci@protonmail.com", 
+            "role": "developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/adinan-cenci/internet-radio"
+        }, 
+        {
+            "type": "vcs",
+            "url": "https://github.com/adinan-cenci/simple-request"
+        }
+    ],
+    "require": {
+        "php": ">=7.0", 
+        "adinan-cenci/simple-request": "^1.1.0" 
+    }, 
+    "autoload": {
+        "psr-4": {
+            "AdinanCenci\\InternetRadio\\": "src/"
+        }
+    }
+}
