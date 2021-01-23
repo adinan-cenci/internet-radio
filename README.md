@@ -24,28 +24,31 @@ It will return an array as such:
 ```
 [
     {
-        "name": "Radio Apintie Suriname - Powered by Bombelman.com", 
-        "description": "top 40", 
-        "homepage": "https://www.apintie.sr", 
-        "playlist": "http://198.178.123.17:8150/listen.pls?sid=1", 
-        "currentlyPlaying": "Jezus Da Boen Masra. - The Jaffo Gate Quartet", 
-        "listeners": "1123", 
-        "bitRate": "96"
-    }, 
-    {
-        "name": "Kalika FM :: Powered by SoftNEP.com", 
-        "description": "pali", 
-        "homepage": "http://www.kalikanews.com", 
-        "playlist": "http://198.178.123.20:7740/listen.pls?sid=1", 
-        "listeners": "472", 
-        "bitRate": "40"
-    }, 
-    {
-        "name": "GHRadio1Real Music Power", 
-        "description": "gh music", 
-        "playlist": "http://149.56.234.136:9946/listen.pls", 
-        "listeners": "358", 
+        "name": "idobi Howl", 
+        "description": "metal, hardcore", 
+        "homepage": "http://idobiradio.com/", 
+        "playlist": "http://69.46.88.26:80/listen.pls", 
+        "currentlyPlaying": "SYLOSIS - Fear the World", 
+        "listeners": "2527", 
         "bitRate": "128"
+    }, 
+    {
+        "name": "KNAC.COM", 
+        "description": "metal", 
+        "homepage": "http://www.knac.com", 
+        "playlist": "http://198.178.123.14:7346/listen.pls?sid=1", 
+        "currentlyPlaying": "NAZARETH - HAIR OF THE DOG", 
+        "listeners": "268", 
+        "bitRate": "128"
+    }, 
+    {
+        "name": "Metal Express Radio", 
+        "description": "heavy metal", 
+        "homepage": "http://www.metalexpressradio.com", 
+        "playlist": "http://5.135.154.69:11590/listen.pls?sid=1", 
+        "currentlyPlaying": "David T. Chastain - Burning Passion", 
+        "listeners": "199", 
+        "bitRate": "192"
     }
     ...
     ...
