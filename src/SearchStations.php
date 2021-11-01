@@ -2,7 +2,6 @@
 namespace AdinanCenci\InternetRadio;
 
 use \AdinanCenci\InternetRadio\Tool\Scraper;
-use \AdinanCenci\SimpleRequest\Request;
 
 class SearchStations extends FetchStationsByGenre 
 {

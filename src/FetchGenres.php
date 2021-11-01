@@ -2,7 +2,6 @@
 namespace AdinanCenci\InternetRadio;
 
 use \AdinanCenci\InternetRadio\Tool\Scraper;
-use \AdinanCenci\SimpleRequest\Request;
 
 class FetchGenres extends Fetch 
 {
@@ -31,11 +30,4 @@ class FetchGenres extends Fetch
     {
         return $this->request('https://www.internet-radio.com/stations/');
     }
-
-    protected function request($url) 
-    {
-        $r = new Request($url);
-        $rsp = $r->request();
-        return $rsp->body;
-    }    
 }
