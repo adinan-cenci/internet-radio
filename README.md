@@ -4,13 +4,13 @@ An unofficial library to retrieve radio stations from the [internet-radio.com](h
 <br><br>
 
 ## Stations by genre
-Use the `::getStationsByGenre($genre, $pageOffset, $pageLimit)` method to retrieve stations labeled with a specific musical genre, returns an array with 20 items.
+Use the `::getStationsByGenre($genre, $offset, $limit)` method to retrieve stations labeled with a specific musical genre.
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
 | $genre | string | | The name of a musical genre, see `::getGenres()` for possible values. |
-| $pageOffset | int | 0 | From which page to start. |
-| $pageLimit | int | 1 | How many pages to read. |
+| $offset | int | 0 |  |
+| $limit | int | 20 |  |
 
 ```php
 use AdinanCenci\InternetRadio\InternetRadio;
@@ -62,13 +62,13 @@ It will return an array as such:
 
 ## Search stations
 
-Use the `::searchStations($query, $pageOffset, $pageLimit)` method to search stations based on their names, returns an array with 20 items.
+Use the `::searchStations($query, $offset, $limit)` method to search stations based on their names.
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
 | $query | string | | Word(s) to be matched against station names. |
-| $pageOffset | int | 0 | From which page to start. |
-| $pageLimit | int | 1 | How many pages to read. |
+| $offset | int | 0 |  |
+| $limit | int | 20 |  |
 
 <br><br>
 

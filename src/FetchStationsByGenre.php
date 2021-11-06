@@ -65,6 +65,11 @@ class FetchStationsByGenre extends Fetch
             $playlist = $match ? $matches[1] : '';
         }
 
+        if (!$playlist && $playButton = $scraper->querySelector("./a", $secondTd)) {
+            $match = preg_match('#(http[^\']+)\'\)#', $playButton->getAttribute('onclick'), $matches);
+            $playlist = $match ? $matches[1] : '';
+        }
+
         //-NAME---------
 
         if ($header = $scraper->querySelector('./h4', $thirdTd)) {

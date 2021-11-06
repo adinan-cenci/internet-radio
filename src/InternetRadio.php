@@ -5,39 +5,54 @@ use \AdinanCenci\InternetRadio\Tool\Scraper;
 
 class InternetRadio 
 {
-    public function searchStations($query, $pageOffset = 0, $pageLimit = 1) 
+    public function searchStations($query, $offset = 0, $limit = 20) 
     {
-        $pageOffset++;
+        $page = $this->calcPages($offset, $limit, $lastPage);
+        $results = [];
 
-        $stations = array();
-
-        for ($page = $pageOffset; $page <= $pageLimit; $page++) {
+        do {
             $obj      = new SearchStations($query, $page);
-            $pages    = $obj->countPages();
-            $stations = array_merge($stations, $obj->getItems());
-        }
+            $stations = $obj->getItems();
+            $page     += 1;
+            $results  = array_merge($results, $stations);
+        } while ($page <= $lastPage);
 
-        return $stations;
+        return array_slice($results, $offset, $limit);
     }
 
-    public function getStationsByGenre($genre, $pageOffset = 0, $pageLimit = 1) 
+    public function getStationsByGenre($genre, $offset = 0, $limit = 20) 
     {
-        $pageOffset++;
+        $firstPage = $page = $this->calcPages($offset, $limit, $lastPage);
+        $results = [];
 
-        $stations = array();
-
-        for ($page = $pageOffset; $page <= $pageLimit; $page++) {
+        do {
             $obj      = new FetchStationsByGenre($genre, $page);
-            $pages    = $obj->countPages();
-            $stations = array_merge($stations, $obj->getItems());
-        }
+            $stations = $obj->getItems();
+            $page     += 1;
+            $results  = array_merge($results, $stations);
+        } while ($page <= $lastPage);
 
-        return $stations;
+        return array_slice($results, $offset, $limit);
     }
 
     public function getGenres() 
     {
         $obj = new FetchGenres();
         return $obj->getItems();
+    }
+
+    protected function calcPages(&$offset, &$limit, &$lastPage) 
+    {
+        $itensPerPage = 20;
+        
+        $first        = $offset;
+        $last         = $offset + $limit;
+
+        $firstPage    = $offset == 0 ? 1 : ceil($first / ($itensPerPage - 1));
+        $lastPage     = ceil($last / $itensPerPage);
+
+        $offset       -= ($firstPage - 1) * $itensPerPage;
+        
+        return $firstPage;
     }
 }
