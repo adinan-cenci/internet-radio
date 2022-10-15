@@ -3,34 +3,32 @@ namespace AdinanCenci\InternetRadio\Tool;
 
 class Scraper 
 {
-    protected $html = '';
-    protected $dom  = null;
+    protected \DOMDocument $dom;
 
-    public function __construct($html) 
+    public function __construct(string $html) 
     {
-        $this->html = $html;
-        $this->dom  = self::loadHtmlDom($this->html);
+        $this->dom = self::loadHtmlDom($html);
     }
 
-    public function querySelectorAll($query, $contextNode = null) 
+    public function querySelectorAll(string $query, \DOMElement $contextNode = null) : \DOMNodeList
     {
         $xpath = new \DOMXpath($this->dom);
         return $xpath->query($query, $contextNode);
     }
 
-    public function querySelector($query, $contextNode = null) 
+    public function querySelector(string $query, \DOMElement $contextNode = null) : ?\DOMNode
     {
         $nodeList = $this->querySelectorAll($query, $contextNode);
         return $nodeList->length ? $nodeList->item(0) : null;
     }
 
-    protected function getCanonicalUrl() 
+    protected function getCanonicalUrl() : string
     {
         $node = $this->querySelector("//link[@rel='canonical']");
-        return  $node->getAttribute('href');
+        return $node ? $node->getAttribute('href') : '';
     }
 
-    public function saveHtml($domElement) 
+    public function saveHtml(\DOMNode $domElement) : string
     {
         $str = '';
         foreach ($domElement->childNodes as $n) {
@@ -40,7 +38,7 @@ class Scraper
         return $str;
     }
 
-    public static function loadHtmlDom($html) 
+    public static function loadHtmlDom(string $html) : \DOMDocument
     {
         $dom = new \DOMDocument();
         $dom->strictErrorChecking = false;

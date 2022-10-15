@@ -9,13 +9,13 @@ require '../vendor/autoload.php';
 //--------------------
 
 $radio    = new InternetRadio();
-$query    = 'power';
+$genre    = 'jazz';
 $offset   = 0;
 $limit    = 20;
 $sortBy   = 'listeners';
 
 try {
-    $stations = $radio->searchStations($query, $offset, $limit, $sortBy);
+    $stations = $radio->getStationsByGenre($genre, $offset, $limit, $sortBy);
 } catch (\Exception $e) {
     die($e->getMessage());
 }

@@ -8,12 +8,15 @@ require '../vendor/autoload.php';
 
 //--------------------
 
-$radio    = new InternetRadio();
-$genre    = 'jazz';
-$offset   = 0;
-$limit    = 20;
-$stations = $radio->getStationsByGenre($genre, $offset, $limit);
+$radio = new InternetRadio();
+
+
+try {
+    $genres = $radio->getGenres();
+} catch (\Exception $e) {
+    die($e->getMessage());
+}
 
 echo '<pre>';
-print_r($stations);
+print_r($radio->getGenres());
 echo '</pre>';
